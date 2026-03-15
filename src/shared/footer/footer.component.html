@@ -1,0 +1,149 @@
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- ================= COMPANY INFO ================= -->
+    <div class="footer-col company-info">
+
+      <div class="footer-logo">
+        <img src="assets/footer.jpeg" alt="Elite Customized Solutions Logo">
+      </div>
+
+      <p>
+        Elite Customized Solutions provides industrial solutions including
+        skilled manpower staffing, safety systems, customized services and
+        professional training programs tailored to meet industry requirements.
+      </p>
+
+    </div>
+
+
+    <!-- ================= ENQUIRY FORM ================= -->
+    <div class="footer-col enquiry-form">
+
+      <h3>Enquire Now</h3>
+
+      <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()">
+
+        <!-- Name -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+
+          <mat-error *ngIf="enquiryForm.get('name')?.touched && enquiryForm.get('name')?.hasError('required')">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+
+
+        <!-- Phone -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Phone No.</mat-label>
+
+          <input matInput
+                 formControlName="phone"
+                 maxlength="10"
+                 inputmode="numeric"
+                 pattern="[0-9]*"
+                 (input)="onPhoneInput($event)">
+
+          <mat-error *ngIf="enquiryForm.get('phone')?.touched && enquiryForm.get('phone')?.hasError('required')">
+            Phone number is required
+          </mat-error>
+
+          <mat-error *ngIf="enquiryForm.get('phone')?.hasError('pattern')">
+            Enter valid 10-digit phone number
+          </mat-error>
+
+        </mat-form-field>
+
+
+        <!-- Email -->
+        <mat-form-field appearance="outline" class="full-width">
+
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+
+          <mat-error *ngIf="enquiryForm.get('email')?.touched && enquiryForm.get('email')?.hasError('required')">
+            Email is required
+          </mat-error>
+
+          <mat-error *ngIf="enquiryForm.get('email')?.hasError('email')">
+            Enter valid email address
+          </mat-error>
+
+        </mat-form-field>
+
+
+        <button mat-raised-button type="submit" class="submit-btn">
+          Submit
+        </button>
+
+      </form>
+
+    </div>
+
+
+    <!-- ================= QUICK LINKS ================= -->
+    <div class="footer-col quick-links">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About Us</a></li>
+        <li><a routerLink="/services">Services</a></li>
+        <li><a routerLink="/career">Careers</a></li>
+        <li><a routerLink="/contact">Contact Us</a></li>
+      </ul>
+
+    </div>
+
+
+    <!-- ================= CONTACT INFO ================= -->
+    <div class="footer-col contact-info">
+
+      <h3>Contact Info</h3>
+
+      <div class="contact-item">
+        <mat-icon>phone</mat-icon>
+        <div>
+          +91-8275782557<br>
+          +91-7387543691
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <mat-icon>email</mat-icon>
+        <div>
+          elitecsolutionshr&#64;gmail.com<br>
+          sales.elitecsolutions&#64;gmail.com
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <mat-icon>location_on</mat-icon>
+
+        <div>
+          <strong>Office:</strong><br>
+          Maratha Kranti Chowk,<br>
+          Talegaon - Chakan Hwy,<br>
+          next to Syndicate Bank,<br>
+          Talegaon Dabhade,<br>
+          Tal - Mawal, Dist - Pune,<br>
+          Maharashtra - 410507
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= COPYRIGHT ================= -->
+  <div class="copyright">
+    © Copyright 2026 Elite Customized Solutions
+  </div>
+
+</footer>

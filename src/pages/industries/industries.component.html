@@ -1,0 +1,14 @@
+<section class="industries-section">
+    <h2>Industries We Serve</h2>
+    <p>
+        We provide specialized technical services and expert manpower across the Renewable Energy, Steel Manufacturing,
+        Oil & Gas,
+        and Power sectors to ensure seamless industrial operations and project execution.
+    </p>
+
+    <div class="industries-slider">
+        <div class="industry-card" *ngFor="let industry of industries">
+            <img [src]="industry.icon" [alt]="industry.name" />
+        </div>
+    </div>
+</section>

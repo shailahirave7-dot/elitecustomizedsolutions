@@ -1,0 +1,211 @@
+/* ================= CONTAINER ================= */
+
+.services-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+
+/* ================= SERVICE CARD ================= */
+
+.service-card {
+  flex: 1;
+  min-width: 320px;
+  max-width: 560px;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ================= HEADER ================= */
+
+.card-header {
+  color: white;
+  padding: 18px;
+  text-align: center;
+}
+
+.blue-header {
+  background: #1976d2;
+}
+
+.orange-header {
+  background: #f57c00;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+
+/* ================= CONTENT ================= */
+
+mat-card-content {
+  padding: 20px;
+}
+
+h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+
+/* ================= SLIDER ================= */
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.slides {
+  display: flex;
+  animation: slide 12s infinite linear;
+}
+
+.slides img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background: #f4f6f9;
+}
+
+
+/* Slider Animation */
+
+@keyframes slide {
+
+  0%,
+  30% {
+    transform: translateX(0);
+  }
+
+  33%,
+  63% {
+    transform: translateX(-100%);
+  }
+
+  66%,
+  96% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+}
+
+
+/* ================= BUTTON ================= */
+
+.know-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  margin: 20px auto;
+
+  width: 160px;
+  height: 42px;
+
+  background: #f0a500;
+  color: #000;
+
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.know-more-btn:hover {
+  background: #d18e00;
+}
+
+
+/* ================= COLLAPSIBLE ================= */
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.collapsible-content.open {
+  max-height: 2000px;
+  padding-top: 10px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width:992px) {
+
+  .slides img {
+    height: 240px;
+  }
+
+  .services-container {
+    gap: 20px;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px) {
+
+  .services-container {
+    flex-direction: column;
+  }
+
+  .slides img {
+    height: 200px;
+  }
+
+  .card-header h2 {
+    font-size: 20px;
+  }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width:480px) {
+
+  .slides img {
+    height: 170px;
+  }
+
+  .card-header h2 {
+    font-size: 18px;
+  }
+
+  .know-more-btn {
+    width: 140px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+}

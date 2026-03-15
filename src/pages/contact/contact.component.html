@@ -1,0 +1,153 @@
+<!-- ================= TOP IMAGE SECTION ================= -->
+<div class="contact-bg"></div>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-section">
+
+    <div class="contact-wrapper">
+
+        <!-- ================= LEFT SIDE FORM ================= -->
+        <div class="form-side">
+
+            <mat-card class="form-card">
+
+                <h2 class="form-title">Get In Touch With Us</h2>
+
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" #formDirective="ngForm">
+
+                    <!-- Name -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name">
+
+                        <mat-error
+                            *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.hasError('required')">
+                            Name is required
+                        </mat-error>
+                    </mat-form-field>
+
+                    <!-- Phone -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Phone No.</mat-label>
+
+                        <input matInput formControlName="phone" maxlength="10" inputmode="numeric" pattern="[0-9]*"
+                            (input)="onPhoneInput($event)">
+
+                        <mat-error
+                            *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.hasError('required')">
+                            Phone number is required
+                        </mat-error>
+
+                        <mat-error *ngIf="contactForm.get('phone')?.hasError('pattern')">
+                            Enter valid 10 digit phone number
+                        </mat-error>
+
+                    </mat-form-field>
+
+                    <!-- Email -->
+                    <mat-form-field appearance="outline" class="full-width">
+
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email">
+
+                        <mat-error
+                            *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('required')">
+                            Email is required
+                        </mat-error>
+
+                        <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+                            Enter valid email address
+                        </mat-error>
+
+                    </mat-form-field>
+
+                    <!-- Message -->
+                    <mat-form-field appearance="outline" class="full-width">
+
+                        <mat-label>Enter Your Message</mat-label>
+                        <textarea matInput rows="4" formControlName="message"></textarea>
+
+                        <mat-error
+                            *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.hasError('required')">
+                            Message is required
+                        </mat-error>
+
+                    </mat-form-field>
+
+                    <!-- Submit -->
+                    <button mat-raised-button color="primary" type="submit" class="submit-btn">
+                        Submit
+                    </button>
+
+                </form>
+
+            </mat-card>
+
+        </div>
+
+        <!-- ================= RIGHT SIDE ================= -->
+        <div class="details-side">
+
+            <!-- CONTACT DETAILS -->
+            <div class="details-top">
+
+                <h2>Contact Details</h2>
+
+                <!-- Call -->
+                <div class="info-box">
+                    <mat-icon>phone</mat-icon>
+
+                    <div class="info-text">
+                        <h3>Call us</h3>
+                        <p>+91-8275782557, +91-7387543691</p>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="info-box">
+                    <mat-icon>email</mat-icon>
+
+                    <div class="info-text">
+                        <h3>Email Us</h3>
+                        <p>
+                            elitecsolutionshr&#64;gmail.com<br>
+                            sales.elitecsolutions&#64;gmail.com
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="info-box">
+                    <mat-icon class="location-icon">location_on</mat-icon>
+
+                    <div class="info-text">
+                        <h3>Our Address</h3>
+
+                        <p>
+                            Maratha Kranti Chowk,<br>
+                            Talegaon - Chakan Hwy,<br>
+                            next to Syndicate Bank,<br>
+                            Talegaon Dabhade,<br>
+                            Tal - Mawal, Dist - Pune,<br>
+                            Maharashtra - 410507
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- GOOGLE MAP -->
+            <!-- <div class="map-container">
+
+                <iframe src="https://www.google.com/maps?q=Talegaon+Dabhade+Mawal+Pune+410507&z=17&output=embed"
+                    loading="lazy">
+                </iframe>
+
+            </div> -->
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,274 @@
+/* GLOBAL FIX FOR HORIZONTAL SCROLL */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* SECTION */
+
+.about-section {
+    background: #f5f7fb;
+    margin-top: 50px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* LAYOUT */
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* TEXT */
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    color: #000;
+}
+
+/* IMAGE */
+
+.experience-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* FEATURES */
+
+.features-container {
+    max-width: 550px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* ICON */
+
+.icon-wrapper {
+    position: relative;
+}
+
+.icon-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: blue;
+    left: -9px;
+    bottom: 31px;
+    border-radius: 6px;
+    /* transition: 0.3s; */
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: orangered;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.icon-box mat-icon {
+    color: white;
+    font-size: 26px;
+}
+
+.icon-wrapper:hover .icon-box {
+    background: blue;
+}
+
+.icon-wrapper:hover::before {
+    opacity: 0;
+}
+
+/* FEATURE TEXT */
+
+.feature-content h3 {
+    margin: 0;
+    color: #0d2a5c;
+    font-size: 20px;
+}
+
+.feature-content p {
+    margin-top: 6px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* STATS */
+
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+    background-color: #f5f7fb;
+}
+
+.stat-card {
+    flex: 1;
+    max-width: 240px;
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.card-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: #ff7a00;
+    margin-bottom: 8px;
+}
+
+.stat-card h2 {
+    font-size: 34px;
+    color: #007bff;
+    margin: 10px 0;
+}
+
+.stat-card p {
+    font-size: 15px;
+}
+
+.stat-card:hover {
+    background: #0b5ed7;
+    transform: translateY(-5px);
+}
+
+.stat-card:hover .card-icon,
+.stat-card:hover h2,
+.stat-card:hover p {
+    color: white;
+}
+
+/* PAGE BANNER */
+
+.page-banner {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.page-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+
+@media (max-width:992px) {
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-section {
+        order: -1;
+    }
+
+    .icon-wrapper::before {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: blue;
+        left: -9px;
+        bottom: 29px;
+        border-radius: 6px;
+        /* transition: 0.3s; */
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width:768px) {
+
+    .container {
+        width: 95%;
+    }
+
+    .feature-item {
+        gap: 15px;
+    }
+
+    .stat-card {
+        max-width: 45%;
+    }
+
+    .icon-wrapper::before {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: blue;
+        left: -6px;
+        bottom: -6px;
+        border-radius: 6px;
+        /* transition: 0.3s; */
+    }
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width:480px) {
+
+    .feature-item {
+        flex-direction: column;
+    }
+
+    .stat-card {
+        max-width: 100%;
+    }
+
+    .page-banner {
+        height: 250px;
+    }
+
+    .icon-wrapper::before {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: blue;
+        left: -6px;
+        bottom: -6px;
+        border-radius: 6px;
+        /* transition: 0.3s; */
+    }
+
+}

@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <!-- Mobile Drawer -->
+  <mat-sidenav #drawer mode="over" position="end" class="mobile-drawer">
+
+    <div class="mobile-menu">
+      <a mat-button routerLink="/home" (click)="drawer.close()">Home</a>
+      <a mat-button routerLink="/about" (click)="drawer.close()">About</a>
+      <a mat-button routerLink="/services" (click)="drawer.close()">Services</a>
+      <a mat-button routerLink="/career" (click)="drawer.close()">Careers</a>
+      <a mat-button routerLink="/contact" (click)="drawer.close()">Contact Us</a>
+    </div>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar class="header">
+
+      <!-- Logo -->
+      <div class="logo">
+        <img src="assets/logo.jpeg" alt="Logo">
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="menu">
+        <a mat-button routerLink="/home">Home</a>
+        <a mat-button routerLink="/about">About</a>
+        <a mat-button routerLink="/services">Services</a>
+        <a mat-button routerLink="/career">Careers</a>
+        <a mat-button routerLink="/contact">Contact Us</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button mat-icon-button class="mobile-menu-btn" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+    </mat-toolbar>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

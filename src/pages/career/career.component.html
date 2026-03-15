@@ -1,0 +1,58 @@
+<app-page-banner title="Career" [showBanner]="showBanner"></app-page-banner>
+
+<section class="career-section">
+
+  <div class="overlay">
+
+    <div class="career-card">
+
+      <h1 class="title">
+        Build Your Future with <span>Elite Customized Solutions</span>
+      </h1>
+
+      <p class="subtitle">
+        Take the next step in your career with exciting challenges and rewarding opportunities.
+        Upload your resume to explore opportunities with us.
+      </p>
+
+      <!-- Resume Upload -->
+      <div class="upload-section">
+
+        <label class="upload-box">
+
+          <input type="file" accept=".pdf,.doc,.docx" (change)="onFileSelected($event)" />
+
+          <span class="upload-text">
+            Upload Resume
+          </span>
+
+          <small class="upload-format">
+            PDF / DOC / DOCX
+          </small>
+
+        </label>
+
+        <p class="file-name" *ngIf="selectedFile">
+          {{ selectedFile.name }}
+        </p>
+
+        <button mat-raised-button color="primary" class="apply-btn" (click)="submitApplication()">
+
+          Submit Resume
+
+        </button>
+
+      </div>
+
+      <p class="email-text">
+        Or email us directly at
+        <a href="mailto:elitecsolutionshr@gmail.com">
+          elitecsolutionshr&#64;gmail.com
+        </a>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>

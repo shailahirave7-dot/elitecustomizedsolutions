@@ -1,0 +1,135 @@
+<app-page-banner title="Service" [showBanner]="showBanner"></app-page-banner>
+
+<div class="services-container">
+
+  <!-- ================= STAFFING SERVICE CARD ================= -->
+  <mat-card class="service-card">
+
+    <div class="card-header blue-header">
+      <h2>Staffing Service</h2>
+    </div>
+
+    <mat-card-content>
+
+      <div class="service-slider">
+
+        <!-- Slider -->
+        <div class="slider">
+          <div class="slides">
+            <img src="assets/Manpower1.jpeg" alt="Manpower 1">
+            <img src="assets/Manpower2.jpeg" alt="Manpower 2">
+            <img src="assets/Manpower3.jpeg" alt="Manpower 3">
+          </div>
+        </div>
+
+        <!-- Button -->
+        <button mat-raised-button class="know-more-btn" (click)="toggleContent('staffing')">
+
+          Know More
+          <mat-icon>expand_more</mat-icon>
+
+        </button>
+
+        <!-- Collapsible Content -->
+        <div class="collapsible-content" [class.open]="openContent === 'staffing'">
+
+          <p>
+            We provide skilled and semi-skilled manpower to support
+            various industrial, infrastructure and construction projects.
+          </p>
+
+          <h4>Our Staffing Services Include:</h4>
+
+          <ul>
+            <li>Project-Based Manpower Deployment</li>
+            <li>Skilled Technicians</li>
+            <li>Engineers & Supervisors</li>
+            <li>Safety Officers & HSE Professionals</li>
+            <li>Machine Operators</li>
+            <li>Fabricators & Welders</li>
+            <li>Electricians, Fitters and Helpers</li>
+          </ul>
+
+          <h4>We ensure:</h4>
+
+          <ul>
+            <li>Proper documentation & compliance</li>
+            <li>PF, ESIC & statutory compliance support</li>
+            <li>Timely workforce deployment</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+
+
+  <!-- ================= INDUSTRIAL SAFETY CARD ================= -->
+
+  <mat-card class="service-card">
+
+    <div class="card-header orange-header">
+      <h2>Industrial Safety Solutions</h2>
+    </div>
+
+    <mat-card-content>
+
+      <div class="service-slider">
+
+        <div class="slider">
+          <div class="slides">
+            <img src="assets/FirstAidBox1.png" alt="First Aid 1">
+            <img src="assets/FirstAidBox2.jpeg" alt="First Aid 2">
+            <img src="assets/FirstAidBox3.jpeg" alt="First Aid 3">
+          </div>
+        </div>
+
+        <button mat-raised-button class="know-more-btn" (click)="toggleContent('safety')">
+
+          Know More
+          <mat-icon>expand_more</mat-icon>
+
+        </button>
+
+        <div class="collapsible-content" [class.open]="openContent === 'safety'">
+
+          <p>
+            We supply high-quality industrial safety products
+            to ensure safe and compliant work environments.
+          </p>
+
+          <h4>Our Safety Products Include:</h4>
+
+          <ul>
+            <li>Customized First Aid Box As Per BOCW And Factory Act</li>
+            <li>Personal Protective Equipment (PPE)</li>
+            <li>Fire Extinguishers</li>
+            <li>Safety Signages</li>
+            <li>Barricading Materials</li>
+            <li>Fire Blanket, Rescue Equipments</li>
+            <li>Electrical Safety Items</li>
+            <li>Industrial Safety Infrastructure</li>
+          </ul>
+
+          <h4>We focus on:</h4>
+
+          <ul>
+            <li>ISI / Certified Products</li>
+            <li>Site-Specific Safety Solutions</li>
+            <li>Bulk Supply for Large Projects</li>
+            <li>Timely Delivery</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>
